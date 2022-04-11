@@ -5,11 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-/**
- * 顾客的业务层层接口
- * @author : Bei-Zhen
- * @date : 2020-11-23 14:24
- */
+
 @Component
 public interface ICustomerService {
 

@@ -12,13 +12,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author : Bei-Zhen
- * @date : 2020-12-06 1:58
- */
+
 @RestController
 @CrossOrigin
-@RequestMapping("/userRole")
+@RequestMapping("crm/userRole")
 public class UserRoleController {
 
     @Autowired

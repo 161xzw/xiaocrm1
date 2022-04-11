@@ -6,10 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * @author : Bei-Zhen
- * @date : 2020-12-06 1:43
- */
+
 @Repository
 public interface IRolePermissionDao {
 
@@ -38,6 +35,9 @@ public interface IRolePermissionDao {
     @ResultMap("rolePermissionMap")
     @Select("select * from role_permission where role_id=#{roleId}")
     List<RolePermission> findOne(@Param("roleId") int roleId);
+
+    @Select("select permission_id from role_permission where role_id=#{roleId}")
+    int findOneID(@Param("roleId") int roleId);
 
     /**
      * 查询总角色权限数

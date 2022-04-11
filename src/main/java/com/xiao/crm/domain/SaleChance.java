@@ -3,11 +3,7 @@ package com.xiao.crm.domain;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * 营销机会实体类
- *
- * @author : Bei-Zhen
- */
+
 public class SaleChance implements Serializable {
 
     /**

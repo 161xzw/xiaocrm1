@@ -7,12 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * 角色的持久化层接口
- *
- * @author : Bei-Zhen
- * @date : 2020-12-01 20:04
- */
+
 @Repository
 public interface IRoleDao {
 
@@ -41,6 +36,15 @@ public interface IRoleDao {
     @ResultMap("roleMap")
     @Select("select * from role where role_name like #{roleName}")
     List<Role> findOne(@Param("roleName") String name);
+
+    /**
+     * 根据ID查权限名称
+     *
+     * @return
+     */
+    @ResultMap("roleMap")
+    @Select("select * from role where id=#{id}")
+    List<Role>findOneByID(@Param("id") int id);
 
     /**
      * 查询总角色数

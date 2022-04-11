@@ -2,11 +2,7 @@ package com.xiao.crm.domain;
 
 import java.io.Serializable;
 
-/**
- * 页面实体类
- * @author : Bei-Zhen
- * @date : 2020-11-26 9:17
- */
+
 public class Pages implements Serializable {
 
     /**

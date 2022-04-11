@@ -5,11 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-/**
- * @author: Candy
- * @date: 2020/12/3 15:39
- * @description:
- */
+
 @Component
 public interface ICusService {
 

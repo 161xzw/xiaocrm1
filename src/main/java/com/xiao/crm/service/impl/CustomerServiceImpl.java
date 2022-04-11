@@ -9,11 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 
-/**
- * 客户的业务层实现类
- * @author : Bei-Zhen
- * @date : 2020-11-23 14:26
- */
+
 @Service("customerService")
 public class CustomerServiceImpl implements ICustomerService {
 

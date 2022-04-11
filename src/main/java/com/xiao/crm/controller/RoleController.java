@@ -12,14 +12,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 角色web层
- * @author : Bei-Zhen
- * @date : 2020-12-01 20:07
- */
+
 @RestController
 @CrossOrigin
-@RequestMapping("/role")
+@RequestMapping("crm/role")
 public class RoleController {
 
     @Autowired

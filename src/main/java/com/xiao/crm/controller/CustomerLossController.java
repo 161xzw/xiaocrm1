@@ -15,7 +15,7 @@ import java.util.Map;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/customerLoss")
+@RequestMapping("crm/customerLoss")
 public class CustomerLossController {
 
     @Autowired

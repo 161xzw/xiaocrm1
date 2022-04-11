@@ -6,11 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * @author: Candy
- * @date: 2020/12/4 17:06
- * @description:
- */
+
 @Repository
 public interface ICustomerOrderDao {
     /**

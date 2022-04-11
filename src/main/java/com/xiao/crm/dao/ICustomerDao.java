@@ -6,12 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * 顾客的持久化层接口
- *
- * @author : Bei-Zhen
- * @date : 2020-11-24 16:45
- */
+
 @Repository
 public interface ICustomerDao {
 

@@ -9,11 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 
-/**
- * @author: Candy
- * @date: 2020/11/23 14:49
- * @description: 用户业务实现类
- */
+
 @Service("userService")
 public class UserServiceImpl implements IUserService {
 

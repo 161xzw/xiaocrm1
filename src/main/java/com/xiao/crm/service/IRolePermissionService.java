@@ -6,10 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-/**
- * @author : Bei-Zhen
- * @date : 2020-12-06 2:47
- */
+
 @Component
 public interface IRolePermissionService {
 
@@ -26,6 +23,8 @@ public interface IRolePermissionService {
      * @return
      */
     List<RolePermission> findOne(@Param("roleId") int roleId);
+
+    int findOneID(@Param("roleId") int roleId);
 
     /**
      * 查询总角色权限数

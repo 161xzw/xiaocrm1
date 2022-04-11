@@ -9,11 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 
-/**
- * 权限的业务层实现类
- * @author : Bei-Zhen
- * @date : 2020-12-01 20:10
- */
+
 @Service("permissionService")
 public class PermissionServiceImpl implements IPermissionService {
 
@@ -36,6 +32,11 @@ public class PermissionServiceImpl implements IPermissionService {
     @Override
     public List<Permission> findOne(String name) {
         return permissionDao.findOne(name);
+    }
+
+    @Override
+    public List<Permission> findOneByID(int id) {
+        return permissionDao.findOneByID(id);
     }
 
     /**

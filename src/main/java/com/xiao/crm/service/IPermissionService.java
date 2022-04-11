@@ -5,11 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-/**
- * 权限的业务层层接口
- * @author : Bei-Zhen
- * @date : 2020-12-01 20:09
- */
+
 @Component
 public interface IPermissionService {
 
@@ -24,6 +20,8 @@ public interface IPermissionService {
      * @return
      */
     List<Permission> findOne(String name);
+
+    List<Permission> findOneByID(int  id);
 
     /**
      * 查询总权限数

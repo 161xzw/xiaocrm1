@@ -6,11 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * @author: Candy
- * @date: 2020/12/1 22:08
- * @description: 客户开发计划持久层接口
- */
+
 @Repository
 public interface ICusDevPlanDao {
     /**

@@ -7,11 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * 权限的持久化层接口
- * @author : Bei-Zhen
- * @date : 2020-12-01 20:06
- */
+
 @Repository
 public interface IPermissionDao {
 
@@ -42,6 +38,9 @@ public interface IPermissionDao {
     @Select("select * from permission where permission_name like #{permissionName}")
     List<Permission> findOne(@Param("permissionName") String name);
 
+    @ResultMap("permissionMap")
+    @Select("select * from permission where id=#{id}")
+    List<Permission> findOneByID(@Param("id") int id);
     /**
      * 查询总权限数
      *

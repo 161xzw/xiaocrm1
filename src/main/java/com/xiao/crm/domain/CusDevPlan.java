@@ -3,11 +3,7 @@ package com.xiao.crm.domain;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * 实体
- *
- * @author : Bei-Zhen
- */
+
 public class CusDevPlan implements Serializable {
 
     /**

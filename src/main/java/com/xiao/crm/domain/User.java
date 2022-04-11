@@ -4,11 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-/**
- * 用户实体类
- *
- * @author : Bei-Zhen
- */
+
 public class User implements Serializable {
 
     /**
@@ -48,9 +44,7 @@ public class User implements Serializable {
      */
     private Date updateDate;
 
-    /**
-     * 多对多关系映射：一个用户可以拥有多个角色
-     */
+
     private List<Role> roles;
 
 

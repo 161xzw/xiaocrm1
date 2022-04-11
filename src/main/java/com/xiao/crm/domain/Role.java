@@ -4,10 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-/**
-* 角色实体类
-* @author : Bei-Zhen
-*/
+
 public class Role implements Serializable {
 
 	/**

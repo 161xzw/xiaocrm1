@@ -9,10 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 
-/**
- * @author : Bei-Zhen
- * @date : 2020-12-06 2:48
- */
+
 @Service("rolePermissionService")
 public class RolePermissionServiceImpl implements IRolePermissionService {
 
@@ -27,6 +24,11 @@ public class RolePermissionServiceImpl implements IRolePermissionService {
     @Override
     public List<RolePermission> findOne(int roleId) {
         return rolePermissionDao.findOne(roleId);
+    }
+
+    @Override
+    public int findOneID(int roleId) {
+        return rolePermissionDao.findOneID(roleId);
     }
 
     @Override

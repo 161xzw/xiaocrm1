@@ -6,11 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * @author: Candy
- * @date: 2020/12/01 15:02
- * @description: 营销机会的持久化层接口
- */
+
 @Repository
 public interface ISaleChanceDao {
 

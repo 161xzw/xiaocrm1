@@ -5,11 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-/**
- * 角色的业务层层接口
- * @author : Bei-Zhen
- * @date : 2020-12-01 20:08
- */
+
 @Component
 public interface IRoleService {
 
@@ -24,6 +20,12 @@ public interface IRoleService {
      * @return
      */
     List<Role> findOne(String name);
+
+    /**
+     * 查询指定角色
+     * @return
+     */
+    List<Role> findOneByID(int id);
 
     /**
      * 查询总角色数

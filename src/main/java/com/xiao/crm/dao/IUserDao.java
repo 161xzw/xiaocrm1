@@ -7,11 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * @author: Candy
- * @date: 2020/11/23 14:45
- * @description: 用户接口
- */
+
 
 @Repository
 public interface IUserDao {
@@ -53,7 +49,7 @@ public interface IUserDao {
      * @param userPwd
      * @return
      */
-    @ResultMap("userRoleMap")
+    @ResultMap("userMap")
     @Select("select * from user where user_name=#{userName} and user_pwd=#{userPwd}")
     User checkLogin(@Param("userName") String userName, @Param("userPwd") String userPwd);
 

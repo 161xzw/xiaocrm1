@@ -5,11 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-/**
- * @author: Candy
- * @date: 2020/11/23 14:48
- * @description: 用户业务层接口
- */
+
 @Component
 public interface IUserService {
 

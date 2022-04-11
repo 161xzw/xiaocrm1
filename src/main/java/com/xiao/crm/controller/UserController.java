@@ -1,8 +1,7 @@
 package com.xiao.crm.controller;
 
-import com.xiao.crm.domain.Pages;
-import com.xiao.crm.domain.User;
-import com.xiao.crm.service.impl.UserServiceImpl;
+import com.xiao.crm.domain.*;
+import com.xiao.crm.service.impl.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -16,19 +15,26 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author: Candy
- * @date: 2020/11/23 15:01
- * @description: 用户web层
- */
+
 @RestController
 @CrossOrigin
-@RequestMapping("/user")
+@RequestMapping("crm/user")
 public class UserController {
 
     @Autowired
     private UserServiceImpl userService;
 
+    @Autowired
+    private UserRoleServiceImpl UserRoleService;
+
+    @Autowired
+    private RoleServiceImpl RoleService;
+
+    @Autowired
+    private PermissionServiceImpl PermissionService;
+
+    @Autowired
+    private RolePermissionServiceImpl RolePermissionService;
     /**
      * 查询用户
      * @param pages
@@ -125,14 +131,32 @@ public class UserController {
         String tel = user.getTel();
         int isValid = user.getIsValid();
 
+        int roleId = UserRoleService.findroleID(id);
+
+        List<Role> roles = RoleService.findOneByID(roleId);
+
+        System.out.println(roles);
+
+        user.setRoles(roles);
+
+       // user.setRoles(role);
+
         //创建权限id集合
         List<Integer> permissions = new ArrayList<>();
         //遍历角色
-        for (int i = 0; i < user.getRoles().size(); i++) {
-            //遍历权限
-            for (int j = 0; j < user.getRoles().get(i).getPermissions().size(); j++) {
-                //存入集合
-                permissions.add(user.getRoles().get(i).getPermissions().get(j).getPermissionLevel());
+
+        if(user.getRoles() !=null){
+            for (int i = 0; i < user.getRoles().size(); i++) {
+                //遍历权限
+             int roleID = RolePermissionService.findOneID(user.getRoles().get(i).getId());
+                List<Permission>  permissions1 = PermissionService.findOneByID(roleID);
+                user.getRoles().get(i).setPermissions(permissions1);
+                System.out.println(user.getRoles().get(i));
+                for (int j = 0; j < user.getRoles().get(i).getPermissions().size(); j++) {
+                    //存入集合
+                    System.out.println("111111111111111");
+                    permissions.add(user.getRoles().get(i).getPermissions().get(j).getPermissionLevel());
+                }
             }
         }
         //存入返回前台数据的map集合

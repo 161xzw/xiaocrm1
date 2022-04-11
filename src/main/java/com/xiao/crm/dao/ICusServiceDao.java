@@ -7,11 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-/**
- * @author: Candy
- * @date: 2020/12/3 15:38
- * @description:
- */
+
 @Repository
 public interface ICusServiceDao {
 

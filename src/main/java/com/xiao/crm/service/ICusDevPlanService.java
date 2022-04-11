@@ -5,11 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-/**
- * @author: Candy
- * @date: 2020/12/1 22:08
- * @description: 客户开发计划的业务层
- */
+
 @Component
 public interface ICusDevPlanService {
     /**

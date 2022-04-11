@@ -14,14 +14,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 客户web层
- * @author : Bei-Zhen
- * @date : 2020-11-23 14:31
- */
+
 @RestController
 @CrossOrigin
-@RequestMapping("/customer")
+@RequestMapping("crm/customer")
 public class CustomerController {
 
     @Autowired

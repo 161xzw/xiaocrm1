@@ -9,12 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 
-/**
- *
- * @author: Candy
- * @date: 2020/12/01 15:03
- * @description: 营销机会的业务层实现类
- */
+
 @Service("saleChanceService")
 public class SaleChanceServiceImpl implements ISaleChanceService {
 

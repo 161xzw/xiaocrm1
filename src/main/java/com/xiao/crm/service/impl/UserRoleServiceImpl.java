@@ -9,10 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 
-/**
- * @author : Bei-Zhen
- * @date : 2020-12-06 1:53
- */
+
 @Service("userRoleService")
 public class UserRoleServiceImpl implements IUserRoleService {
 
@@ -27,6 +24,11 @@ public class UserRoleServiceImpl implements IUserRoleService {
     @Override
     public List<UserRole> findOne(int userId) {
         return userRoleDao.findOne(userId);
+    }
+
+    @Override
+    public int findroleID(int userId) {
+        return userRoleDao.findroleID(userId);
     }
 
     @Override

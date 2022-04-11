@@ -6,10 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-/**
- * @author : Bei-Zhen
- * @date : 2020-12-06 1:52
- */
+
 @Component
 public interface IUserRoleService {
 
@@ -26,6 +23,8 @@ public interface IUserRoleService {
      * @return
      */
     List<UserRole> findOne(@Param("userId") int userId);
+
+    int  findroleID(@Param("userId") int userId);
 
     /**
      * 查询总用户角色数

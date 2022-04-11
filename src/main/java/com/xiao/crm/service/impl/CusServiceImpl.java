@@ -9,11 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 
-/**
- * @author: Candy
- * @date: 2020/12/3 15:39
- * @description:
- */
+
 @Service("cusService")
 public class CusServiceImpl implements ICusService {
     @Autowired

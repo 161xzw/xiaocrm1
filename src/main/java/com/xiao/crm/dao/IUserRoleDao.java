@@ -6,10 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * @author : Bei-Zhen
- * @date : 2020-12-06 1:42
- */
+
 @Repository
 public interface IUserRoleDao {
 
@@ -38,6 +35,9 @@ public interface IUserRoleDao {
     @ResultMap("userRoleMap")
     @Select("select * from user_role where user_id=#{userId}")
     List<UserRole> findOne(@Param("userId") int userId);
+
+    @Select("select role_id from user_role where user_id=#{userId}")
+    int findroleID(@Param("userId") int userId);
 
     /**
      * 查询总用户角色数

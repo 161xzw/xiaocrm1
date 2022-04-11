@@ -5,11 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-/**
- * @author: Candy
- * @date: 2020/12/01 15:03
- * @description: 营销机会的业务层层接口
- */
+
 @Component
 public interface ISaleChanceService {
 

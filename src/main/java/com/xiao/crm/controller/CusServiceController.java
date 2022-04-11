@@ -12,13 +12,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author: Candy
- * @date: 2020/12/3 15:38
- * @description:
- */
+
 @RestController
-@RequestMapping("/cusService")
+@RequestMapping("crm/cusService")
 @CrossOrigin
 public class CusServiceController {
     @Autowired

@@ -9,12 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 
-/**
- * 角色的业务层实现类
- *
- * @author : Bei-Zhen
- * @date : 2020-12-01 20:09
- */
+
 @Service("roleService")
 public class RoleServiceImpl implements IRoleService {
 
@@ -37,6 +32,11 @@ public class RoleServiceImpl implements IRoleService {
     @Override
     public List<Role> findOne(String name) {
         return roleDao.findOne(name);
+    }
+
+    @Override
+    public List<Role> findOneByID(int id) {
+        return roleDao.findOneByID(id);
     }
 
     /**

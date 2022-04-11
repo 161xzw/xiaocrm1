@@ -12,14 +12,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @author: Candy
- * @date: 2020/12/01 15:01
- * @description: 营销机会web层
- */
+
 @RestController
 @CrossOrigin
-@RequestMapping("/saleChance")
+@RequestMapping("crm/saleChance")
 public class SaleChanceController {
 
     @Autowired
