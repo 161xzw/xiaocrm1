@@ -148,14 +148,16 @@ public class UserController {
         if(user.getRoles() !=null){
             for (int i = 0; i < user.getRoles().size(); i++) {
                 //遍历权限
-             int roleID = RolePermissionService.findOneID(user.getRoles().get(i).getId());
-                List<Permission>  permissions1 = PermissionService.findOneByID(roleID);
+                List<RolePermission> roleID = RolePermissionService.findOne(user.getRoles().get(i).getId());
+                for (int a=0;a<roleID.size();a++){
+                    int PermissionId =roleID.get(a).getPermissionId();
+                List<Permission>  permissions1 = PermissionService.findOneByID(PermissionId);
                 user.getRoles().get(i).setPermissions(permissions1);
                 System.out.println(user.getRoles().get(i));
                 for (int j = 0; j < user.getRoles().get(i).getPermissions().size(); j++) {
                     //存入集合
-                    System.out.println("111111111111111");
                     permissions.add(user.getRoles().get(i).getPermissions().get(j).getPermissionLevel());
+                }
                 }
             }
         }
