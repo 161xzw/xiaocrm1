@@ -23,7 +23,7 @@
     <div class="layui-header">
         <div class="layui-logo">
             <a class="logo" lay-href="index.html">
-                <img src="../img/logo1.png" alt="layui" style="width: 100px;height: 100%;">
+                <img src="../img/logo.png" alt="layui" style="width: 100px;height: 100%;">
             </a>
         </div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
@@ -71,11 +71,12 @@
                 <li class="layui-nav-item layui-nav-itemed">
                     <a class="" href="javascript:;" ><i class="iconfont icon-kehu2 i-big"></i>客户管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a id="customer" lay-href="404.html"><i class="iconfont icon-kehu"></i>基本信息<span class="spanx">Customer</span></a></dd>
+                        <dd><a id="customer" lay-href="404.html"><i class="iconfont icon-kehu"></i>客户基本信息<span class="spanx">Customer</span></a></dd>
 <!--                        <dd><a lay-href="CCmanagement/CustomerLinkMan.html"><i class="iconfont icon-kehu1"></i>联系人管理<span class="spanx">Contacts</span></a></dd>-->
-                        <dd><a id="order" lay-href="404.html"><i class="iconfont icon-dingdan"></i>订单查看<span class="spanx">Order View</span></a></dd>
+                        <dd><a id="order" lay-href="404.html"><i class="iconfont icon-dingdan"></i>客户订单查看<span class="spanx">Order View</span></a></dd>
 <!--                        <dd><a lay-href="CCmanagement/CustomerContact.html"><i class="iconfont icon-jilu"></i>交往记录<span class="spanx">Order Notes</span></a></dd>-->
                         <dd><a id="loss" lay-href="404.html"><i class="iconfont icon-liushihuiyuan"></i>流失客户管理<span class="spanx">Loss</span></a></dd>
+                        <dd><a id="VIPcustomer" lay-href="CCmanagement/VipCustomer.html"><i class="iconfont icon-kehu"></i>重点客户管理<span class="spanx">VIPCustomer</span></a></dd>
                     </dl>
                 </li>
 
@@ -121,7 +122,7 @@
 
     <div class="layui-footer" style="width: 100%;left: 200px;">
         <!-- 底部固定区域 -->
-        @唐三藏CRM
+        CRM
     </div>
 
     <div id="group" style="padding:20px 50px 20px 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;" hidden>
@@ -188,6 +189,7 @@
         $('#customer').attr('lay-href','CCmanagement/Customer.html');
         $('#order').attr('lay-href','CCmanagement/CustomerOrder.html');
         $('#loss').attr('lay-href','CCmanagement/CustomerLoss.html');
+       // $('#Vipcustomer').attr('lay-href','CCmanagement/VipCustomer.html');
     }
 
     //权限管理
@@ -279,7 +281,6 @@
                     ,btn: ['好的', 'yes']
                     ,btnAlign: 'c'
                     ,moveType: 1 //拖拽模式，0或者1
-                    // ,content: '<div style="padding: 50px; line-height: 22px; background-color: #393D49; color: #fff; font-weight: 300;">你好！<br>我们小组成员是：<br>秦益、黄雁、莫锦媛<br>欢迎使用我们的crm!<br>给个五星好评呗？</div>'
                     ,content:$("#group")
                 });
             }

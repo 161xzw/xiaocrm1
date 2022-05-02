@@ -16,7 +16,7 @@
 <body style="margin: 20px;">
 
 <div class="demoTable">
-	搜索订单号：
+	搜索客户编号：
 	<div class="layui-inline">
 		<input class="layui-input" name="id" id="demoReload" autocomplete="off">
 	</div>
@@ -78,6 +78,7 @@
 				,{field: 'cusId', title: '客户编号',fixed: true,width: 100}
 				,{field: 'orderNum', title: '订单号', fixed: true,width: 250}
 				,{field: 'address', title: '地址',width: 200}
+				//,{field: 'address', title: '地址',width: 200}
 				,{field: 'orderDate', title: '下单时间',sort: true,width:150,
 					templet:function (row) {
 						return createTime(row.orderDate);

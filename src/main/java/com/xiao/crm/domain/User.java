@@ -20,7 +20,7 @@ public class User implements Serializable {
      */
     private String userPwd;
     /**
-     * 真实密码
+     * 真实姓名
      */
     private String trueName;
     /**

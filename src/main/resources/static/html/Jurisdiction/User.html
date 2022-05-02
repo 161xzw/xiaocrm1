@@ -151,7 +151,7 @@
 					var data = checkStatus.data;
 					console.log(data)
 					// layer.alert(JSON.stringify(data));
-					layer.confirm('真的删除行么', function (index) {
+					layer.confirm('真的删除此用户吗', function (index) {
 						// obj.del();
 						layer.close(index);
 						//向后台发送ajax请求
@@ -207,7 +207,7 @@
 			var data = obj.data;
 			if (obj.event === 'del') {
 				console.log("操作：" + obj.event);
-				layer.confirm('真的删除行么', function (index) {
+				layer.confirm('真的删除此用户吗', function (index) {
 					// obj.del();
 					layer.close(index);
 					//向后台发送ajax请求

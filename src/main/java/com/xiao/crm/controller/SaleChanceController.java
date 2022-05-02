@@ -98,6 +98,10 @@ public class SaleChanceController {
     public @ResponseBody
     String save(@RequestBody SaleChance saleChance) {
         //调用业务层方法，获取用户集合
+       if(saleChance.getId()!=null){
+                     int flag = saleChanceService.update(saleChance);
+                          return "修改成功";
+                     }
         int flag = saleChanceService.save(saleChance);
         return "添加成功";
     }

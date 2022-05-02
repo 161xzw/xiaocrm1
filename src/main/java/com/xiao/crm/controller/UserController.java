@@ -228,6 +228,12 @@ public class UserController {
     public @ResponseBody
     String save(@RequestBody User user) {
         //调用业务层方法，获取用户集合
+         if(user.getId()!=null){
+                   //从前台获取json数据设置地址
+
+                 int flag = userService.update(user);
+                   return "修改成功";
+              }
         int flag = userService.save(user);
         return "添加成功";
     }

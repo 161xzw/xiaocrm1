@@ -39,9 +39,9 @@
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">经理</label>
+                <label class="layui-form-label">类别</label>
                 <div class="layui-input-block">
-                    <input type="text" id="cusManager" lay-verify="required" name="cusManager" placeholder="请输入经理名字" autocomplete="off" class="layui-input">
+                    <input type="text" id="cusManager" lay-verify="required" name="cusManager" placeholder="请输入客户类别" autocomplete="off" class="layui-input">
                 </div>
             </div>
             <div class="layui-form-item">
@@ -49,8 +49,8 @@
                 <div class="layui-input-block">
                     <select name="level" lay-filter="level" lay-verify="required">
                         <option value=""></option>
-                        <option value="1" selected="">1</option>
-                        <option value="2">2</option>
+                        <option value="普通" selected="">普通</option>
+                        <option value="重点">重点</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
@@ -153,7 +153,8 @@
         <div class="layui-form-item" hidden>
             <label class="layui-form-label"></label>
             <div class="layui-input-block">
-                <input type="hidden" id="id" name="id" lay-verify="title" autocomplete="off" placeholder="请输入姓名" class="layui-input">
+                <input type="input" style="display: none" id="id" name="id" lay-verify="title" autocomplete="off" placeholder="请输入姓名" class="layui-input">
+
             </div>
         </div>
     </div>
@@ -168,6 +169,7 @@
         var form = layui.form;
         //判断是新增还是修改
         var myUrl="";
+        console.log(form)
         if ($('#id').val() == ""){
             myUrl="http://localhost:8080/crm/customer/save";
         }else{

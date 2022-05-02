@@ -69,6 +69,67 @@ public class CustomerController {
         return map;
     }
 
+    @RequestMapping("/findAllqiye")
+    public @ResponseBody
+    Map<String,Object> findAllqiye(Pages pages){
+        //从前台获取当前页数，每页总数量，和查询关键字
+        int page = pages.getPage();
+        int limit = pages.getLimit();
+        String key = pages.getKey();
+        //调用service的方法,获取客户集合
+        List<Customer> customers = null;
+        int count = 0;
+        if(key != null){
+            if(!key.equals("")){
+                //模糊查询
+                customers = customerService.findOneqiye("%" + key + "%");
+                //获取指定客户总数量
+                count = customers.size();
+            }
+        } else {
+            customers = customerService.findAllqiye((page - 1) * limit,limit);
+            //获取客户总数量
+            count = customerService.findTotalqiye();
+        }
+        //放入map集合
+        Map<String,Object> map = new HashMap<>();
+        map.put("msg",0);
+        map.put("code",0);
+        map.put("count",count);
+        map.put("data",customers);
+        return map;
+    }
+
+    @RequestMapping("/findAllgeren")
+    public @ResponseBody
+    Map<String,Object> findAllgeren(Pages pages){
+        //从前台获取当前页数，每页总数量，和查询关键字
+        int page = pages.getPage();
+        int limit = pages.getLimit();
+        String key = pages.getKey();
+        //调用service的方法,获取客户集合
+        List<Customer> customers = null;
+        int count = 0;
+        if(key != null){
+            if(!key.equals("")){
+                //模糊查询
+                customers = customerService.findOnegeren("%" + key + "%");
+                //获取指定客户总数量
+                count = customers.size();
+            }
+        } else {
+            customers = customerService.findAllgeren((page - 1) * limit,limit);
+            //获取客户总数量
+            count = customerService.findTotalgeren();
+        }
+        //放入map集合
+        Map<String,Object> map = new HashMap<>();
+        map.put("msg",0);
+        map.put("code",0);
+        map.put("count",count);
+        map.put("data",customers);
+        return map;
+    }
     /**
      * 删除指定客户
      * @param request
@@ -92,6 +153,12 @@ public class CustomerController {
     @RequestMapping("/save")
     public @ResponseBody
     String add(@RequestBody Customer customer){
+        if(customer.getId()!=null){
+            //从前台获取json数据设置地址
+            customer.setArea(customer.getProvince()+customer.getCity()+customer.getDistrict());
+            int flag = customerService.update(customer);
+            return "修改成功";
+        }
         //从前台获取json数据设置地址
         customer.setArea(customer.getProvince()+customer.getCity()+customer.getDistrict());
         //调用service的方法,获取客户集合

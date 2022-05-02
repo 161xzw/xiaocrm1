@@ -15,11 +15,31 @@ public interface ICustomerService {
      */
     List<Customer> findAll(int page, int limit);
 
+    List<Customer> findAllqiye(int page, int limit);
+
+    List<Customer> findAllgeren(int page, int limit);
+
+    List<Customer> findAllVIP(int page, int limit);
+
+    List<Customer> findAllVIPqiye(int page, int limit);
+
+    List<Customer> findAllVIPgeren(int page, int limit);
+
     /**
      * 查询指定客户
      * @return
      */
     List<Customer> findOne(String name);
+
+    List<Customer> findOneVip(String name);
+
+    List<Customer> findOneqiye(String name);
+
+    List<Customer> findOneVipqiye(String name);
+
+    List<Customer> findOneVipgeren(String name);
+
+    List<Customer> findOnegeren(String name);
 
     /**
      * 查询总客户数
@@ -27,11 +47,23 @@ public interface ICustomerService {
      */
     int findTotal();
 
+    int findTotalVip();
+
+    int findTotalqiye();
+
+    int findTotalgeren();
+
+    int findTotalVipgeren();
+
+    int findTotalVipqiye();
+
     /**
      * 根据id删除客户
      * @return
      */
     int deleteById(int id);
+
+    int updateVip();
 
     /**
      * 新增客户

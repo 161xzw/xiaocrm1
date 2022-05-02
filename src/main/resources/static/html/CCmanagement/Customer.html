@@ -42,6 +42,8 @@
 <!--		<button class="layui-btn layui-btn-sm layui-btn-danger" lay-event="loss">流失选中</button>-->
 <!--		<button class="layui-btn layui-btn-sm layui-bg-blue btn" lay-event="findAll" onclick="history.go(0)">查看全部客户信息</button>-->
 		<button class="layui-btn layui-btn-sm layui-bg-blue btn" lay-event="add">添加</button>
+		<button class="layui-btn layui-btn-sm layui-bg-blue btn" lay-event="qiye">企业</button>
+		<button class="layui-btn layui-btn-sm layui-bg-blue btn" lay-event="geren">个人</button>
 		<button class="layui-inline layui-btn layui-btn-primary layui-btn-sm btn" lay-event="refresh"
 				onclick="history.go(0)" style="width: 30px;height: 30px">
 			<i class="layui-icon layui-icon-refresh-3" style="color: #0000FF;padding: 3px 0 0 1px"></i></button>
@@ -49,7 +51,8 @@
 </script>
 
 <script type="text/html" id="barDemo">
-	<a class="layui-btn layui-btn-xs layui-bg-blue" lay-event="show">查看联系人</a>
+	<a class="layui-btn layui-btn-xs layui-bg-blue" lay-event="show">联系人</a>
+	<a class="layui-btn layui-btn-xs layui-bg-blue" lay-event="geren">个人</a>
 	<a class="layui-btn layui-btn-xs layui-bg-orange" lay-event="edit">编辑</a>
 	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 	<a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="loss">流失</a>
@@ -78,10 +81,11 @@
 				, {field: 'id', title: '编号', fixed: true, width: 70}
 				, {field: 'name', title: '姓名', fixed: true, width: 80}
 				, {field: 'area', title: '地区', width: 150}
-				, {field: 'cusManager', title: '经理',width: 80}
-				, {field: 'level', title: '级别', width: 70}
-				, {field: 'satisfaction', title: '满意度', sort: true, width: 90}
-				, {field: 'creditLine', title: '信用度', sort: true, width: 90}
+				//, {field: 'cusManager', title: '类别',sort: true,width: 80}
+				, {field: 'satisfaction', title: '类别', sort: true, width: 90}
+				, {field: 'level', title: '级别',sort: true, width: 80}
+				//, {field: 'satisfaction', title: '满意度', sort: true, width: 90}
+				//, {field: 'creditLine', title: '信用度', sort: true, width: 90}
 				, {field: 'address', title: '地址', width: 180}
 				, {field: 'tel', title: '手机号', sort: true, width: 120}
 				// , {field: 'webSite', title: '网址', sort: true, width: 130}
@@ -171,6 +175,78 @@
 				case 'LAYTABLE_TIPS':
 					layer.alert('这是工具栏右侧自定义的一个图标按钮');
 					break;
+
+				case  'qiye':
+					table.render({
+						elem: '#customer'
+						, url: 'http://localhost:8080/crm/customer/findAllqiye'
+						, toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
+						, height: 550
+						, defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
+							title: '提示'
+							, layEvent: 'LAYTABLE_TIPS'
+							, icon: 'layui-icon-tips'
+						}]
+						, cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+						, cols: [[
+							{type: 'checkbox', fixed: 'left',width: 80}
+							, {field: 'id', title: '编号', fixed: true, width: 70}
+							, {field: 'name', title: '姓名', fixed: true, width: 80}
+							, {field: 'area', title: '地区', width: 150}
+							//, {field: 'cusManager', title: '类别',sort: true,width: 80}
+							, {field: 'satisfaction', title: '类别', sort: true, width: 90}
+							, {field: 'level', title: '级别',sort: true, width: 80}
+							//, {field: 'satisfaction', title: '满意度', sort: true, width: 90}
+							//, {field: 'creditLine', title: '信用度', sort: true, width: 90}
+							, {field: 'address', title: '地址', width: 180}
+							, {field: 'tel', title: '手机号', sort: true, width: 120}
+							// , {field: 'webSite', title: '网址', sort: true, width: 130}
+							// , {field: 'state', title: '流失状态', sort: true, width: 100},
+							, {title: '操作', toolbar: '#barDemo', width: 250,fixed: 'right'}
+						]]
+						, id: 'testReload'
+						, page: true
+						, done: function (res, curr, count, status) {
+							layer.msg("操作成功，共查询到 " + count + " 个企业客户信息");
+						}
+					});
+					break;
+
+				case  'geren':
+					table.render({
+						elem: '#customer'
+						, url: 'http://localhost:8080/crm/customer/findAllgeren'
+						, toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
+						, height: 550
+						, defaultToolbar: ['filter', 'exports', 'print', { //自定义头部工具栏右侧图标。如无需自定义，去除该参数即可
+							title: '提示'
+							, layEvent: 'LAYTABLE_TIPS'
+							, icon: 'layui-icon-tips'
+						}]
+						, cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+						, cols: [[
+							{type: 'checkbox', fixed: 'left',width: 80}
+							, {field: 'id', title: '编号', fixed: true, width: 70}
+							, {field: 'name', title: '姓名', fixed: true, width: 80}
+							, {field: 'area', title: '地区', width: 150}
+							//, {field: 'cusManager', title: '类别',sort: true,width: 80}
+							, {field: 'satisfaction', title: '类别', sort: true, width: 90}
+							, {field: 'level', title: '级别',sort: true, width: 80}
+							//, {field: 'satisfaction', title: '满意度', sort: true, width: 90}
+							//, {field: 'creditLine', title: '信用度', sort: true, width: 90}
+							, {field: 'address', title: '地址', width: 180}
+							, {field: 'tel', title: '手机号', sort: true, width: 120}
+							// , {field: 'webSite', title: '网址', sort: true, width: 130}
+							// , {field: 'state', title: '流失状态', sort: true, width: 100},
+							, {title: '操作', toolbar: '#barDemo', width: 250,fixed: 'right'}
+						]]
+						, id: 'testReload'
+						, page: true
+						, done: function (res, curr, count, status) {
+							layer.msg("操作成功，共查询到 " + count + " 个个人客户信息");
+						}
+					});
+					break;
 			}
 			;
 		});
@@ -248,7 +324,19 @@
 						body.find('#cusId').val(data.id);
 					}
 				});
-			}else if(obj.event === 'loss'){
+			}else if(obj.event === 'qiye'){
+				$.ajax({
+					//编写json格式，设置属性和值
+					url: "http://localhost:8080/crm/customer/findAllqiye",
+					contentType: "application/json;charset=utf-8",
+					dataType: "json",
+					type: "post",
+					success: function (data) {
+						//服务器端成功响应的json数据，进行解析
+					}
+				})
+			}
+			else if(obj.event === 'loss'){
 				console.log("操作："+obj.event);
 				layer.open({
 					type: 2,

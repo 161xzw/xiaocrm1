@@ -40,6 +40,22 @@ public interface ICustomerDao {
     @Select("select * from customer where is_valid=1 limit #{page},#{limit}")
     List<Customer> findAll(@Param("page") int page, @Param("limit") int limit);
 
+    @Select("select * from customer where is_valid=1 and satisfaction='企业'  limit #{page},#{limit}")
+    List<Customer> findAllqiye(@Param("page") int page, @Param("limit") int limit);
+
+    @Select("select * from customer where is_valid=1 and satisfaction='个人'  limit #{page},#{limit}")
+    List<Customer> findAllgeren(@Param("page") int page, @Param("limit") int limit);
+
+    @Select("select * from customer where is_valid=1 and level = '重点' limit #{page},#{limit}")
+    List<Customer> findAllVIP(@Param("page") int page, @Param("limit") int limit);
+
+    @Select("select * from customer where is_valid=1 and level = '重点' and satisfaction='企业' limit #{page},#{limit}")
+    List<Customer> findAllVIPqiye(@Param("page") int page, @Param("limit") int limit);
+
+    @Select("select * from customer where is_valid=1 and level = '重点' and satisfaction='个人' limit #{page},#{limit}")
+    List<Customer> findAllVIPgeren(@Param("page") int page, @Param("limit") int limit);
+
+
     /**
      * 查询指定客户
      *
@@ -49,6 +65,25 @@ public interface ICustomerDao {
     @Select("select * from customer where is_valid=1 and name like #{name}")
     List<Customer> findOne(@Param("name") String name);
 
+    @ResultMap("customerMap")
+    @Select("select * from customer where is_valid=1 and level = '重点' and name like #{name}")
+    List<Customer> findOneVip(@Param("name") String name);
+
+    @ResultMap("customerMap")
+    @Select("select * from customer where is_valid=1 and satisfaction='企业'  and name like #{name}")
+    List<Customer> findOneqiye(@Param("name") String name);
+
+    @ResultMap("customerMap")
+    @Select("select * from customer where is_valid=1 and satisfaction='个人'  and name like #{name}")
+    List<Customer> findOnegeren(@Param("name") String name);
+
+    @ResultMap("customerMap")
+    @Select("select * from customer where is_valid=1 and satisfaction='企业' and level = '重点' and name like #{name}")
+    List<Customer> findOneVipqiye(@Param("name") String name);
+
+    @ResultMap("customerMap")
+    @Select("select * from customer where is_valid=1 and satisfaction='个人' and level = '重点' and name like #{name}")
+    List<Customer> findOneVipgeren(@Param("name") String name);
     /**
      * 查询总客户数
      *
@@ -57,6 +92,20 @@ public interface ICustomerDao {
     @Select("select count(*) from customer where is_valid=1")
     int findTotal();
 
+    @Select("select count(*) from customer where is_valid=1 and satisfaction='企业'")
+    int findTotalqiye();
+
+    @Select("select count(*) from customer where is_valid=1 and satisfaction='个人'")
+    int findTotalgeren();
+
+    @Select("select count(*) from customer where is_valid=1 and level = '重点' and satisfaction='个人'")
+    int findTotalVipgeren();
+
+    @Select("select count(*) from customer where is_valid=1 and level = '重点' and satisfaction='企业'")
+    int findTotalVipqiye();
+
+    @Select("select count(*) from customer where is_valid=1 and level = '重点'")
+    int findTotalVip();
     /**
      * 根据id删除客户
      *
@@ -64,6 +113,9 @@ public interface ICustomerDao {
      */
     @Update("update customer set is_valid=0 where id=#{id}")
     int deleteById(@Param("id") int id);
+
+    @Update(" UPDATE customer a SET level = '重点' WHERE a.id in (select d.cus_id FROM (SELECT SUM(money) sum ,b.cus_id FROM customer_order b GROUP BY cus_id) d where d.SUM>10000)")
+    int updateVip();
 
     /**
      * 添加客户

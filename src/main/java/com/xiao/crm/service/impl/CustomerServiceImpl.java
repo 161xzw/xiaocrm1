@@ -25,6 +25,31 @@ public class CustomerServiceImpl implements ICustomerService {
         return customerDao.findAll(page, limit);
     }
 
+    @Override
+    public List<Customer> findAllqiye(int page, int limit) {
+        return customerDao.findAllqiye(page, limit);
+    }
+
+    @Override
+    public List<Customer> findAllgeren(int page, int limit) {
+        return customerDao.findAllgeren(page, limit);
+    }
+
+    @Override
+    public List<Customer> findAllVIP(int page, int limit) {
+        return customerDao.findAllVIP(page, limit);
+    }
+
+    @Override
+    public List<Customer> findAllVIPqiye(int page, int limit) {
+        return customerDao.findAllVIPqiye(page, limit);
+    }
+
+    @Override
+    public List<Customer> findAllVIPgeren(int page, int limit) {
+        return customerDao.findAllVIPgeren(page,limit);
+    }
+
     /**
      * 查询指定客户
      * @return
@@ -32,6 +57,31 @@ public class CustomerServiceImpl implements ICustomerService {
     @Override
     public List<Customer> findOne(String name) {
         return customerDao.findOne(name);
+    }
+
+    @Override
+    public List<Customer> findOneVip(String name) {
+        return customerDao.findOneVip(name);
+    }
+
+    @Override
+    public List<Customer> findOneqiye(String name) {
+        return customerDao.findOneqiye(name);
+    }
+
+    @Override
+    public List<Customer> findOneVipqiye(String name) {
+        return customerDao.findOneVipqiye(name);
+    }
+
+    @Override
+    public List<Customer> findOneVipgeren(String name) {
+        return customerDao.findOneVipgeren(name);
+    }
+
+    @Override
+    public List<Customer> findOnegeren(String name) {
+        return customerDao.findOnegeren(name);
     }
 
     /**
@@ -43,6 +93,29 @@ public class CustomerServiceImpl implements ICustomerService {
         return customerDao.findTotal();
     }
 
+    @Override
+    public int findTotalVip() {
+        return customerDao.findTotalVip();
+    }
+    @Override
+    public int findTotalqiye() {
+        return customerDao.findTotalqiye();
+    }
+    @Override
+    public int findTotalgeren() {
+        return customerDao.findTotalgeren();
+    }
+
+    @Override
+    public int findTotalVipgeren() {
+        return customerDao.findTotalVipgeren();
+    }
+
+    @Override
+    public int findTotalVipqiye() {
+        return customerDao.findTotalVipqiye();
+    }
+
     /**
      * 根据id删除客户
      * @return
@@ -50,6 +123,11 @@ public class CustomerServiceImpl implements ICustomerService {
     @Override
     public int deleteById(int id) {
         return customerDao.deleteById(id);
+    }
+
+    @Override
+    public int updateVip() {
+        return customerDao.updateVip();
     }
 
     /**

@@ -26,7 +26,7 @@
 	<body>
 		<div class='login'>
 			<div class='login_title'>
-				<span>欢迎登录</span>
+				<span>登录</span>
 			</div>
 			<div class='login_fields'>
 				<div class='login_fields__user'>
@@ -59,25 +59,6 @@
 				</div>
 				<!-- 分割线 -->
 				<div style="height: 0.1px; width: 82%; background-color: #D3D7F7; margin: 5px 33px;"></div>
-				
-				<!-- Shadow,设置对象阴影效果
-				Color，设置阴影颜色。
-				Direction，设置阴影的方向，角度也是从0°~315°取值（跟PS的投影效果非常的相似。)
-				Strength，设置投影强度，数值越大越模糊。 -->
-
-				<!-- <HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#987cb9,direction:145,strength:15)" align="center" width="85%" color=#898989 SIZE=1> -->
-				
-<!--				&lt;!&ndash;记住/忘记密码 &ndash;&gt;-->
-<!--				<div class='remember'>-->
-<!--					<div class="left" style="position: relative;">-->
-<!--						<div style="position: absolute; top: 3px; left: -2px;">-->
-<!--							<input type="checkbox" title="" id="">-->
-<!--						</div>-->
-<!--						-->
-<!--						<p style="display: inline-block; font-size: 13px;padding-left: 15px;">记住我</p>-->
-<!--					</div>-->
-<!--					<div class="right"><a href="#">忘记密码？</a></div>-->
-<!--				</div>-->
 				<!-- 登录 -->
 				<div class='login_fields__submit' style="clear: both;">
 					<input type='button' value='登录'>
@@ -101,8 +82,7 @@
 		</div>
 		<div class="OverWindows"></div>
 		<link href="../layui/css/layui.css" rel="stylesheet" type="text/css" />
-<!--		<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>-->
-<!--		<script src="https://www.jq22.com/jquery/jquery-ui-1.11.0.js"></script>-->
+
 		<script type="text/javascript" src='../js/stopExecutionOnTimeout.js?t=1'></script>
 		<script src="../layui/layui.js" type="text/javascript"></script>
 		<script src="../js/Particleground.js" type="text/javascript"></script>
@@ -133,8 +113,8 @@
 			var ajaxmockjax = 1; //是否启用虚拟Ajax的请求响 0 不启用  1 启用
 			//默认账号密码
 
-			var truelogin = "kbcxy";
-			var truepwd = "1";
+			//var truelogin = "kbcxy";
+			//var truepwd = "1";
 
 			var CodeVal = 0;
 			Code();
@@ -165,37 +145,7 @@
 					$('input[type="button"]').click();
 				}
 			});
-			// 粒子背景特效
-			// 			$('body').particleground({
-			// 				dotColor: '#E8DFE8',
-			// 				lineColor: '#133b88'
-			// 			});
-			// 			$('input[name="pwd"]').focus(function() {
-			// 				$(this).attr('type', 'password');
-			// 			});
-			// 			$('input[type="text"]').focus(function() {
-			// 				$(this).prev().animate({
-			// 					'opacity': '1'
-			// 				}, 200);
-			// 			});
-			// 			$('input[type="text"],input[type="password"]').blur(function() {
-			// 				$(this).prev().animate({
-			// 					'opacity': '.5'
-			// 				}, 200);
-			// 			});
-			// 			$('input[name="login"],input[name="pwd"]').keyup(function() {
-			// 				var Len = $(this).val().length;
-			// 					$(this).next().animate({
-			// 						'opacity': '1',
-			// 						'right': '30'
-			// 					}, 200);
-			// 				} else {
-			// 					$(this).next().animate({
-			// 						'opacity': '0',
-			// 						'right': '20'
-			// 					}, 200);
-			// 				}
-			// 			});
+
 			var open = 0;
 			layui.use('layer', function() {
 				//非空验证
@@ -244,17 +194,7 @@
 									});
 
 								}
-								// if (result.state === 0) {
-								// 	if(val == num){
-								// 		layer.msg("登录成功", function () {
-								// 			window.location.href = "frame.html?"+login;
-								// 		})
-								// 	}else{
-								// 		layer.msg('验证码错误')
-								// 	}
-								// } else {
-								// 	layer.msg("登录失败，" + result.msg, {icon: 2})
-								// }
+								
 							}
 						})
 					}
