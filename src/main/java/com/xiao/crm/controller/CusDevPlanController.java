@@ -99,6 +99,12 @@ public class CusDevPlanController {
     public @ResponseBody
     String save(@RequestBody CusDevPlan cusDevPlan) {
         System.out.println(cusDevPlan);
+        if(cusDevPlan.getId()!=null){
+            //从前台获取json数据设置地址
+
+            int flag = cusDevPlanService.update(cusDevPlan);
+            return "修改成功";
+        }
         //调用业务层方法，获取客户开发计划集合
         int flag = cusDevPlanService.save(cusDevPlan);
         return "添加成功";

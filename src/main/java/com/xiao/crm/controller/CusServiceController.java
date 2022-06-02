@@ -96,6 +96,12 @@ public class CusServiceController {
     public @ResponseBody
     String save(@RequestBody CusService cusServicee) {
         //调用业务层方法，获取客户服务集合
+        if(cusServicee.getId()!=null){
+            //从前台获取json数据设置地址
+
+            int flag = cusService.update(cusServicee);
+            return "修改成功";
+        }
         int flag = cusService.save(cusServicee);
         return "添加成功";
     }

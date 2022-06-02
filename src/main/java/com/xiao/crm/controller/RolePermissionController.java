@@ -82,6 +82,12 @@ public class RolePermissionController {
     public @ResponseBody
     String add(@RequestBody RolePermission rolePermission){
         //调用service的方法,获取客户集合
+        if(rolePermission.getId()!=null){
+            //从前台获取json数据设置地址
+
+            int flag = rolePermissionService.update(rolePermission);
+            return "修改成功";
+        }
         int flag = rolePermissionService.save(rolePermission);
         return "添加成功";
     }

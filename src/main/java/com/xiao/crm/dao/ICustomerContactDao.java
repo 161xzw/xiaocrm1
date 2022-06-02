@@ -29,7 +29,7 @@ public interface ICustomerContactDao {
     public List<CustomerContact> findAll();
 
     /**
-     *根据客户id(cusId)和联系人id(linkManId)查找交往记录
+     *根据客户id(cusId)
      * @return
      */
     @ResultMap("CustomerContactMap")

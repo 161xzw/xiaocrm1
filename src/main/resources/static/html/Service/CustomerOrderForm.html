@@ -102,32 +102,11 @@
 
     });
 
-/*    function createTime(v){
-        var date=new Date(v);
-        var y=date.getFullYear();
-        var m=date.getMonth();
-        m=m<10?'0'+m:m;
-        var d=date.getDate();
-        d=d<10?'0'+d:d;
-        var h=date.getHours();
-        h=h<10?'0'+h:h;
-        var min=date.getMinutes();
-        min=min<10?'0'+min:min;
-        var sec=date.getSeconds();
-        sec=sec<10?'0'+sec:sec;
-        var str=y+"-"+m+"-"+d+" "+h+":"+min+":"+sec;
-        return str;
-    }*/
+
 
     layui.use(['form'], function(){
         var form = layui.form;
-        //判断是增加还是修改
-       /* var myUrl = "";
-        if($('#id').val() == ""){
-            myUrl = "http://localhost:8080/crm/customerOrder/save";
-        }else {
-            myUrl = "http://localhost:8080/crm/customerOrder/update";
-        }*/
+
 
         //监听添加
         form.on('submit(putIn)', function(data){

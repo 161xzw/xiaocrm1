@@ -101,10 +101,10 @@
 				, {field: 'email', title: '邮箱', width: 180}
 				, {field: 'tel', title: '电话', width: 130}
 				, {field: 'isValid', title: '是否可用',  width: 100}
-				,{field: 'createDate', title: '创建时间', sort: true,templet:function (row) {
+				,{field: 'createDate', title: '创建时间', sort: true,  width: 180,templet:function (row) {
 						return createTime(row.createDate);
 					}}
-				, {title: '操作', toolbar: '#barDemo',  fixed: 'right'}
+				, {title: '操作', toolbar: '#barDemo',  fixed: 'right',width: 200}
 			]]
 			, id: 'testReload'
 			, page: true

@@ -81,6 +81,12 @@ public class CustomerLossController {
     public @ResponseBody
     String add(@RequestBody CustomerLoss customerLoss, HttpServletRequest request){
         //调用service的方法,获取客户集合
+        if(customerLoss.getId()!=null){
+            //从前台获取json数据设置地址
+
+            int flag = customerLossService.update(customerLoss);
+            return "修改成功";
+        }
         int flag = customerLossService.save(customerLoss);
         System.out.println("-----"+customerLoss);
         //从前台获取删除id

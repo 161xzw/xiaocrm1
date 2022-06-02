@@ -81,6 +81,12 @@ public class PermissionController {
     public @ResponseBody
     String add(@RequestBody Permission permission){
         //调用service的方法,获取客户集合
+        if(permission.getId()!=null){
+            //从前台获取json数据设置地址
+
+            int flag = permissionService.update(permission);
+            return "修改成功";
+        }
         int flag = permissionService.save(permission);
         return "添加成功";
     }
